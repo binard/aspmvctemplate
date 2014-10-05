@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E4AC311F-EE55-4295-8606-A247BACCF791}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Fr.Binard.Net.Infrastructure.EF</RootNamespace>
+    <AssemblyName>Fr.Binard.Net.Infrastructure.EF</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DefaultContext.cs" />
+    <Compile Include="InfraConfiguration.cs" />
+    <Compile Include="DbContextFactory.cs" />
+    <Compile Include="IDbContextFactory.cs" />
+    <Compile Include="Migrations\201409141452145_InitialMigrations.cs" />
+    <Compile Include="Migrations\201409141452145_InitialMigrations.Designer.cs">
+      <DependentUpon>201409141452145_InitialMigrations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409141547469_ChangeTestConfiguration.cs" />
+    <Compile Include="Migrations\201409141547469_ChangeTestConfiguration.Designer.cs">
+      <DependentUpon>201409141547469_ChangeTestConfiguration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryBase.cs" />
+    <Compile Include="Test\TestMapping.cs" />
+    <Compile Include="Test\TestRepository.cs" />
+    <Compile Include="UnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fr.Binard.Net.Domain\Fr.Binard.Net.Domain.csproj">
+      <Project>{82b774f8-d042-4698-a6d3-50b946561901}</Project>
+      <Name>Fr.Binard.Net.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fr.Binard.Net.Repository\Fr.Binard.Net.Repository.csproj">
+      <Project>{61160548-1303-4c69-b4c1-e1aee3c832f7}</Project>
+      <Name>Fr.Binard.Net.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Fr.Binard.Utils\Fr.Binard.Net.Utils.csproj">
+      <Project>{6fd44370-acb1-4941-9811-01ce315c457a}</Project>
+      <Name>Fr.Binard.Net.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201409141452145_InitialMigrations.resx">
+      <DependentUpon>201409141452145_InitialMigrations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409141547469_ChangeTestConfiguration.resx">
+      <DependentUpon>201409141547469_ChangeTestConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

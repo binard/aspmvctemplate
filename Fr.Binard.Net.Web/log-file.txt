@@ -1,0 +1,6 @@
+2014-09-27 23:37:25,295 [9] INFO  Fr.Binard.Net.Common.Logger [(null)] - Tes jbb
+2014-09-27 23:38:51,359 [8] INFO  Fr.Binard.Net.Common.Logger [(null)] - Tes jbb
+2014-09-27 23:52:08,538 [35] INFO  Fr.Binard.Net.Web.Core.Controllers.TestController [(null)] - Tes jbb
+2014-09-28 00:41:45,355 [95] INFO  Fr.Binard.Net.Common.Log.Log4NetLogger - Test JBB : Youhou
+2014-09-28 00:43:40,388 [98] INFO  Fr.Binard.Net.Common.Log.Log4NetLogger - Test JBB : Youhou
+2014-09-28 00:44:33,807 [99] [INFO ] - Test JBB : Youhou
